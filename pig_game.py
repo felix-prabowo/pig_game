@@ -24,9 +24,9 @@ max_score = 50
 player_scores = [0 for _ in range(players)]    # a list comprehension   
 
 while max(player_scores) < max_score:
-    
     for player_index in range(players):
         print(f"\nPlayer number {player_index + 1} turn has just started!\n")
+        print("Your total score is:", player_scores[player_index], "\n")
         current_score = 0
         
         while True:
@@ -47,3 +47,7 @@ while max(player_scores) < max_score:
     
         player_scores[player_index] += current_score
         print("Your total score is:", player_scores[player_index])
+
+max_score = max(player_scores)
+player_winning_index = player_scores.index(max_score)
+print("Player number", player_winning_index + 1, "is the winner with a score of:", max_score)
